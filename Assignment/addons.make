@@ -1,3 +1,0 @@
-ofxCv-master
-ofxGui
-ofxOpenCv
