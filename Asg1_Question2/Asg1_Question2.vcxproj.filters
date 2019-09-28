@@ -94,7 +94,10 @@
     <ClCompile Include="..\Assignment2\src\main.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="..\Assignment2\src\ofApp.cpp">
+    <ClCompile Include="C:\Users\Kit\Desktop\Assignment2\src\ofApp.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Kit\Desktop\Assignment2\src\main.cpp">
       <Filter>src</Filter>
     </ClCompile>
   </ItemGroup>
@@ -1397,7 +1400,7 @@
     <ClInclude Include="..\..\..\..\addons\ofxOpenCv\libs\opencv\include\opencv2\world.hpp">
       <Filter>addons\ofxOpenCv\libs\opencv\include\opencv2</Filter>
     </ClInclude>
-    <ClInclude Include="..\Assignment2\src\ofApp.h">
+    <ClInclude Include="C:\Users\Kit\Desktop\Assignment2\src\ofApp.h">
       <Filter>src</Filter>
     </ClInclude>
   </ItemGroup>

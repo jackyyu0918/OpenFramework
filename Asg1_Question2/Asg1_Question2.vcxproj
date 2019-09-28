@@ -211,7 +211,8 @@
     <ClCompile Include="..\..\..\..\addons\ofxOpenCv\src\ofxCvImage.cpp" />
     <ClCompile Include="..\..\..\..\addons\ofxOpenCv\src\ofxCvShortImage.cpp" />
     <ClCompile Include="..\Assignment2\src\main.cpp" />
-    <ClCompile Include="..\Assignment2\src\ofApp.cpp" />
+    <ClCompile Include="C:\Users\Kit\Desktop\Assignment2\src\main.cpp" />
+    <ClCompile Include="C:\Users\Kit\Desktop\Assignment2\src\ofApp.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\..\addons\ofxCv-master\src\ofxCv.h" />
@@ -581,7 +582,7 @@
     <ClInclude Include="..\..\..\..\addons\ofxOpenCv\libs\opencv\include\opencv2\viz\widget_accessor.hpp" />
     <ClInclude Include="..\..\..\..\addons\ofxOpenCv\libs\opencv\include\opencv2\viz.hpp" />
     <ClInclude Include="..\..\..\..\addons\ofxOpenCv\libs\opencv\include\opencv2\world.hpp" />
-    <ClInclude Include="..\Assignment2\src\ofApp.h" />
+    <ClInclude Include="C:\Users\Kit\Desktop\Assignment2\src\ofApp.h" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="$(OF_ROOT)\libs\openFrameworksCompiled\project\vs\openframeworksLib.vcxproj">
