@@ -12,7 +12,15 @@ void ofApp::setup() {
 
 //--------------------------------------------------------------
 void ofApp::update() {
+}
 
+void ofApp::mousePressed(int x, int y, int button) {
+	if (button == 0) {
+		uchar intensity = matLena.at<uchar>(y, x);
+		cout << "position (y,x): " << x << " " << y << " Intensity: " << int(intensity)<< endl;
+
+		matLena.at<uchar>(y, x) = uchar(255);
+	}
 }
 
 //--------------------------------------------------------------
@@ -64,28 +72,51 @@ void ofApp::draw() {
 	/*
 	Q2.2a)
 	Lena
-	imgLena.draw(0, 0);
-
 	GaussianBlur(matLena, matNewLena, Size(3, 3), 4,4);
+	drawMat(matNewLena, 0, 0);
+
+	GaussianBlur(matLena, matNewLena, Size(3, 3), 5,5);
 	drawMat(matNewLena, imgLena.getWidth(), 0);
 
-	GaussianBlur(matLena, matNewLena, Size(3, 3),  5,5);
+	GaussianBlur(matLena, matNewLena, Size(3, 3), 6,6);
 	drawMat(matNewLena, imgLena.getWidth() * 2, 0);
 
-	GaussianBlur(matLena, matNewLena, Size(3, 3), 6,6);
+	GaussianBlur(matLena, matNewLena, Size(3, 3), 7,7);
 	drawMat(matNewLena, 0, imgLena.getHeight());
 
-	GaussianBlur(matLena, matNewLena, Size(3, 3), 7,7);
+	GaussianBlur(matLena, matNewLena, Size(3, 3), 8,8);
 	drawMat(matNewLena, imgLena.getWidth(), imgLena.getHeight());
 
-	GaussianBlur(matLena, matNewLena, Size(3, 3), 8,8);
+	GaussianBlur(matLena, matNewLena, Size(3, 3), 9,9);
 	drawMat(matNewLena, imgLena.getWidth() * 2, imgLena.getHeight());
 
-	GaussianBlur(matLena, matNewLena, Size(3, 3), 9,9);
-	drawMat(matNewLena, 0, imgLena.getHeight()*2);
-
 	GaussianBlur(matLena, matNewLena, Size(3, 3), 10,10);
-	drawMat(matNewLena, imgLena.getWidth(), imgLena.getHeight()*2);
+	drawMat(matNewLena, 0, imgLena.getHeight() * 2);
+	*/
+
+	/*
+	Q2.2b)
+	Circuit
+	GaussianBlur(matCircuit, matNewCircuit, Size(3, 3), 4,4);
+	drawMat(matNewCircuit, 0, 0);
+
+	GaussianBlur(matCircuit, matNewCircuit, Size(3, 3), 5,5);
+	drawMat(matNewCircuit, imgCircuit.getWidth(), 0);
+
+	GaussianBlur(matCircuit, matNewCircuit, Size(3, 3), 6,6);
+	drawMat(matNewCircuit, imgCircuit.getWidth() * 2, 0);
+
+	GaussianBlur(matCircuit, matNewCircuit, Size(3, 3), 7,7);
+	drawMat(matNewCircuit, 0, imgCircuit.getHeight());
+
+	GaussianBlur(matCircuit, matNewCircuit, Size(3, 3), 8,8);
+	drawMat(matNewCircuit, imgCircuit.getWidth(), imgCircuit.getHeight());
+
+	GaussianBlur(matCircuit, matNewCircuit, Size(3, 3), 9,9);
+	drawMat(matNewCircuit, imgCircuit.getWidth() * 2, imgCircuit.getHeight());
+
+	GaussianBlur(matCircuit, matNewCircuit, Size(3, 3), 10,10);
+	drawMat(matNewCircuit, 0, imgCircuit.getHeight() * 2);
 	*/
 
 	/*
