@@ -1,12 +1,12 @@
 #pragma once
 
 #include "ofMain.h"
-#include "ofxOpenCv.h"
 #include "ofxCv.h"
+#include "ofxOpenCv.h"
+#include "ofxGui.h"
 
-using namespace cv;
 using namespace ofxCv;
-
+using namespace cv;
 
 class ofApp : public ofBaseApp{
 
@@ -21,18 +21,24 @@ class ofApp : public ofBaseApp{
 		void mouseDragged(int x, int y, int button);
 		void mousePressed(int x, int y, int button);
 		void mouseReleased(int x, int y, int button);
-		void mouseEntered(int x, int y);
+		void mouseEntered(int x, int y)
+		void gotMessage(ofMessage msg);;
 		void mouseExited(int x, int y);
 		void windowResized(int w, int h);
 		void dragEvent(ofDragInfo dragInfo);
-		void gotMessage(ofMessage msg);
+    
+    ofVideoGrabber myVideoGrabber;
+    ofImage imgCam;
+    Mat matCam;
+	int storePixel = -1;
 
-		ofImage imgMan;
-		ofImage imgBg;
-		Mat matMan;
-		Mat matBg;
+	Mat hist;
 
-		Mat alpha;
-		Mat rgb[3];
-		
+	Mat histImage;
+
+	ofPolyline histogram;
+
+	ofPolyline histCols[256];
+    
+    
 };

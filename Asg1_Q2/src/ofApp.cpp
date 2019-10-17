@@ -48,25 +48,22 @@ void ofApp::draw() {
 	*/
 
 	/*
-	Q2.1b)
-	Circuit
-
+	Q2.1b
 	imgCircuit.draw(0, 0);
+	boxFilter(matCircuit, matNewCircuit, -1, Size(3, 3));
+	drawMat(matNewCircuit, imgCircuit.getWidth(), 0);
 
-	boxFilter(matCircuit, matCircuit, -1, Size(3, 3));
-	drawMat(matCircuit, imgCircuit.getWidth(), 0);
+	boxFilter(matCircuit, matNewCircuit, -1, Size(5, 5));
+	drawMat(matNewCircuit, imgCircuit.getWidth() * 2, 0);
 
-	boxFilter(matLena, matNewLena, -1, Size(5, 5));
-	drawMat(matCircuit, imgCircuit.getWidth()*2, 0);
+	boxFilter(matCircuit, matNewCircuit, -1, Size(7, 7));
+	drawMat(matNewCircuit, 0, imgCircuit.getHeight());
 
-	boxFilter(matLena, matNewLena, -1, Size(7, 7));
-	drawMat(matCircuit, 0, imgCircuit.getHeight());
+	boxFilter(matCircuit, matNewCircuit, -1, Size(9, 9));
+	drawMat(matNewCircuit, imgCircuit.getWidth(), imgCircuit.getHeight());
 
-	boxFilter(matLena, matNewLena, -1, Size(9, 9));
-	drawMat(matCircuit, imgCircuit.getWidth(), imgCircuit.getHeight());
-
-	boxFilter(matLena, matNewLena, -1, Size(11, 11));
-	drawMat(matCircuit, imgCircuit.getWidth()*2, imgCircuit.getHeight());
+	boxFilter(matCircuit, matNewCircuit, -1, Size(11, 11));
+	drawMat(matNewCircuit, imgCircuit.getWidth() * 2, imgCircuit.getHeight());
 	*/
 
 	/*
