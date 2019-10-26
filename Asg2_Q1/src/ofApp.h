@@ -26,14 +26,24 @@ class ofApp : public ofBaseApp{
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
     
-    ofVideoPlayer vid;
-    ofImage vidFrame;
-    Mat vidFrameMat;
-    Mat vidFrameMatGray;
-    Mat vidFrameMatEdge;
-    
+    //ofImage img;
+    //Mat imgMat;
+
+	ofVideoPlayer vid;
+	ofImage vidFrame;
+	Mat vidFrameMat;
+	Mat vidRealMat;
+	Mat vidFrameMatGray;
+	Mat vidFrameMatEdge;
+
+
     ofxPanel gui;
-    ofxIntSlider lowThresholdEdge;
+    ofxIntSlider lowThreshold;
+    ofxIntSlider lineVoteThreshold;
+    
+    Mat mask;
+    vector<cv::Point> keyPoints;
+    
     
     
 };
