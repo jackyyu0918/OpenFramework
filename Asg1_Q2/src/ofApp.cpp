@@ -47,8 +47,7 @@ void ofApp::draw() {
 	drawMat(matNewLena, imgLena.getWidth()*2, imgLena.getHeight());
 	*/
 
-	/*
-	Q2.1b
+	
 	imgCircuit.draw(0, 0);
 	boxFilter(matCircuit, matNewCircuit, -1, Size(3, 3));
 	drawMat(matNewCircuit, imgCircuit.getWidth(), 0);
@@ -64,7 +63,7 @@ void ofApp::draw() {
 
 	boxFilter(matCircuit, matNewCircuit, -1, Size(11, 11));
 	drawMat(matNewCircuit, imgCircuit.getWidth() * 2, imgCircuit.getHeight());
-	*/
+	
 
 	/*
 	Q2.2a)
