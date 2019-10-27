@@ -34,30 +34,32 @@ void ofApp::update(){
 void ofApp::draw(){
 	//static
     ofBackground(255);
-    ofSetColor(255, 255, 255);
-
+	//white bg
+	ofSetColor(255, 255, 255);
+	drawMat(vidRealMat, 0, 0);
 
     mask = Mat::zeros(cv::Size(vid.getWidth(), vid.getHeight()), CV_8U);
 
-    //Draw line
+    //Draw dot
     for(int i = 0; i < keyPoints.size(); i++){
         ofSetColor(255, 0, 0);
         ofDrawCircle(keyPoints[i].x, keyPoints[i].y, 5);
     }
     
+	//draw convex
     if(keyPoints.size()>=3){
         fillConvexPoly(mask, keyPoints.data(), keyPoints.size(), Scalar(255,255,255));
         bitwise_and(vidFrameMatEdge, mask, vidFrameMatEdge);
     }
     
-    ofSetColor(255, 255, 255);
-
-	drawMat(vidRealMat, 0, 0);
+	/*white canny view
+	ofSetColor(255, 255, 255);
+	drawMat(vidFrameMatEdge, vid.getWidth(), 0);*/
 
     vector<Vec4i> lines;
     HoughLinesP(vidFrameMatEdge, lines, 2, CV_PI/180, lineVoteThreshold, 15, 20);
 
-	//draw line
+	//draw line (detected line)
     ofSetColor(255,0,0);
 	
     for(int i = 0; i < lines.size(); i++){

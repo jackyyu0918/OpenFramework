@@ -43,7 +43,8 @@ class ofApp : public ofBaseApp{
     
     Mat mask;
     vector<cv::Point> keyPoints;
-    
+
+	vector<Vec4i> lines;
     
     
 };
