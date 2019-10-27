@@ -37,13 +37,13 @@ void ofApp::draw() {
 	drawMat(matRealCam, 0, 0);
 	drawMat(matCam, imgCam.getWidth(), 0);
 	for (int i = 0; i < circles.size(); i++) {
+		cout << circles[i][0] <<" " << circles[i][1] << " " << circles[i][2] << endl;
+		cout << "i is: " << i << endl;
 		ofSetColor(255, 255, 255);
 		ofDrawCircle(circles[i][0], circles[i][1], circles[i][2]);
-	}
 
-	for (int i = 0; i < circles.size()/2; i++) {
-		ofSetColor(0, 50, 0);
-		ofDrawCircle(circles[i][0], circles[i][1], circles[i][2]);
+		ofSetColor(0, 0, 0);
+		ofDrawCircle(circles[i][0], circles[i][1], circles[i][2]/2);
 	}
 	gui.draw();
 
