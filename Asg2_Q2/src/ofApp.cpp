@@ -4,33 +4,46 @@
 void ofApp::setup() {
 	gui.setup();
 	gui.add(lowThreshold.setup("low threshold", 50, 0, 100));
-	im.load("cap.jpg");
+	myVideoGrabber.initGrabber(320, 240);
 
 
 }
 
 //--------------------------------------------------------------
 void ofApp::update() {
+	// Ask the grabber to refresh its data.
+	myVideoGrabber.update();
+
+	// If the grabber indeed has fresh data,
+	if (myVideoGrabber.isFrameNew()) {
+
+		// Obtain a pointer to the grabber's image data.
+		imgCam.setFromPixels(myVideoGrabber.getPixels());
+		matCam = toCv(imgCam);
+		matRealCam = toCv(imgCam);
+		cvtColor(matCam, matCam, CV_BGR2GRAY);
+		GaussianBlur(matCam, matCam, 3);
+		Canny(matCam, matCam, lowThreshold, lowThreshold * 2);
+		//HoughCircles(matCam, circles, CV_HOUGH_GRADIENT, 2, 50, lowThreshold * 2, 100, 30, 50);
+		HoughCircles(matCam, circles, CV_HOUGH_GRADIENT, 2, 50, lowThreshold * 2, 100, 30, 50);
+	}
 
 }
 
 //--------------------------------------------------------------
 void ofApp::draw() {
-	ofBackground(255);
-	ofSetColor(255, 255, 255);
-	im.draw(0, 0);
-
-	mat = toCv(im);
-	cvtColor(mat, mat, CV_BGR2GRAY);
-	GaussianBlur(mat, mat, 3);
-	Canny(mat, mat, lowThreshold, lowThreshold * 2);
-	drawMat(mat, im.getWidth(), 0);
-	vector<Vec3f> circles;
-	HoughCircles(mat, circles, CV_HOUGH_GRADIENT, 2, 50, lowThreshold * 2, 100, 30, 50);
+	ofBackground(255, 255, 255);
+	ofSetColor(255);
+	drawMat(matRealCam, 0, 0);
+	drawMat(matCam, imgCam.getWidth(), 0);
 	for (int i = 0; i < circles.size(); i++) {
-		ofSetColor(255, 0, 0);
-		ofNoFill();
+		cout << circles[i][0] <<" " << circles[i][1] << " " << circles[i][2] << endl;
+		cout << "i is: " << i << endl;
+		ofSetColor(255, 255, 255);
 		ofDrawCircle(circles[i][0], circles[i][1], circles[i][2]);
+
+		ofSetColor(0, 0, 0);
+		ofDrawCircle(circles[i][0], circles[i][1], circles[i][2]/2);
 	}
 	gui.draw();
 

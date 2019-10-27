@@ -27,8 +27,12 @@ public:
 	void dragEvent(ofDragInfo dragInfo);
 	void gotMessage(ofMessage msg);
 
-	ofImage im;
-	Mat mat;
+	ofVideoGrabber myVideoGrabber;
+	ofImage imgCam;
+	Mat matCam;
+	Mat matRealCam;
+
+	vector<Vec3f> circles;
 
 	ofxPanel gui;
 	ofxIntSlider lowThreshold;
