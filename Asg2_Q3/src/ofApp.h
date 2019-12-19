@@ -33,5 +33,13 @@ class ofApp : public ofBaseApp{
     
     Mat edgeResult;
 	
+	int startCol;
 	int currentCol;
+	int endCol;
+
+	bool foundFirst = false;
+	bool foundWhite = false;
+	bool foundEnd = false;
+	bool foundTarget = false;
+	bool orientation = false;
 };
