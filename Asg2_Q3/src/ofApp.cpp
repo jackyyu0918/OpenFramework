@@ -69,23 +69,11 @@ void ofApp::draw() {
 	im.draw(0, 0);
 	drawMat(edgeResult, im.getWidth(), 0);
 
-	if (orientation == false) {
-		for (int y = 0; y < edgeResult.rows; y++) {
-			if ((int)edgeResult.at<uchar>(y, currentCol) == 255) {
-				ofSetColor(255, 255, 255);
-				ofDrawCircle(currentCol, y, 8);
-				break;
-			}
-		}
-	}
-
-	else {
-		for (int y = 0; y < edgeResult.rows; y++) {
-			if ((int)edgeResult.at<uchar>(y, currentCol) == 255) {
-				ofSetColor(255, 255, 255);
-				ofDrawCircle(currentCol, y, 8);
-				break;
-			}
+	for (int y = 0; y < edgeResult.rows; y++) {
+		if ((int)edgeResult.at<uchar>(y, currentCol) == 255) {
+			ofSetColor(255, 255, 255);
+			ofDrawCircle(currentCol, y, 8);
+			break;
 		}
 	}
 
