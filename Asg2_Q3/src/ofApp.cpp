@@ -4,7 +4,7 @@
 void ofApp::setup(){
     gui.setup();
     gui.add(lowThreshold.setup("low threshold", 89, 0, 100));
-    im.load("testing1.jpg");
+    im.load("testing3.jpg");
     im.setImageType(OF_IMAGE_COLOR);
     mat = toCv(im);
 	dupMat = toCv(im);

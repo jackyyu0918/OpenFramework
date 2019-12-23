@@ -39,8 +39,7 @@ void ofApp::update(){
 		vidImg.setFromPixels(pixs);
 		vidMat = toCv(vidImg);
 
-		// size is for minimum size
-		face_cascade.detectMultiScale(vidMat, faces, 1.1, 2, 0 | CV_HAAR_SCALE_IMAGE, cv::Size(30, 30));
+		
 		}
 }
 
@@ -50,12 +49,15 @@ void ofApp::draw(){
 	//Original Image at the background
     drawMat(vidMat, 0, 0);
 
+	// size is for minimum size
+	face_cascade.detectMultiScale(vidMat, faces, 1.1, 2, 0 | CV_HAAR_SCALE_IMAGE, cv::Size(30, 30));
 	//Draw rectangle for detected face
 	for (int i = 0; i < faces.size(); i++) {
 
 		//In each detected face, detect eyes
 		eye_cascade.detectMultiScale(vidMat, eyes, 1.1, 2, 0 | CV_HAAR_SCALE_IMAGE, cv::Size(30, 30));
-		for (int j = 0; j < eyes.size(); j++) {
+		for (int j = 0; j < 2; j++) {
+
 			//Only draw outline of shape
 			ofNoFill();
 
